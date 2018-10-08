@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Stage, Layer, Rect, Text, Circle, Group } from 'react-konva';
+import { Text, Circle, Group } from 'react-konva';
 
 class TreeNode extends Component
 {

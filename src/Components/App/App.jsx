@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './../../logo.svg';
+//import logo from './../../logo.svg';
 import './App.css';
 //import TreeNode from './../TreeNode/TreeNode';
 import KonvaContainer from './../KonvaContainer/KonvaContainer';
@@ -41,15 +41,13 @@ class App extends Component
         }
       }
     };
+
+    let pointers = [{name: "current", pointer: tree.left}];
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
         <div>
-          <KonvaContainer width={800} height={800}>
-            <BinarySearchTree root={tree} width={800} x={400} y={20} />
+          <KonvaContainer width={1000} height={800}>
+            <BinarySearchTree pointers = {pointers} root={tree} width={1000} x={500} y={20} />
           </KonvaContainer>
         </div>
       </div>
