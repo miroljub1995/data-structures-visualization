@@ -1,7 +1,20 @@
 import React, {Component} from 'react';
 import BSTContainer from './BSTContainer';
+import Operations from './Operations';
+import Player from './../Player/Player';
 
 export default class BSTIndex extends Component {
+
+
+
+  handleInsert = (value)=>{
+    debugger;
+  }
+
+  handleNextFrame = (frame)=>{
+    console.log(frame);
+  }
+
     render() {
         let tree = {
             val: 5,
@@ -43,7 +56,10 @@ export default class BSTIndex extends Component {
                 pointer: tree.left
             }
         ];
+
         return (<div>
+            <Player frames={[1,2,3,4,5,6,7,8,9]} onNextFrame={this.handleNextFrame} />
+            <Operations onInsert={this.handleInsert}/>
             <BSTContainer bSTFrame={{
                     tree,
                     pointers

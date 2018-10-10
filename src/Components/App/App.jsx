@@ -11,7 +11,7 @@ class App extends Component {
             <div className="App">
                 <NavigationBar/>
                 <Switch>
-                    <Route exact="exact" path="/" component={Home}/>
+                    <Route exact path="/" component={Home}/>
                     <Route path="/BinarySearchTree" component={BSTIndex}/>
                     <Route path="/" component={NotFound}/>
                 </Switch>

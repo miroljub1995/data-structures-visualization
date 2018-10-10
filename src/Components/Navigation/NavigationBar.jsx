@@ -7,7 +7,7 @@ export default class NavigationBar extends Component {
         return (<Navbar>
             <Navbar.Header>
                 <Navbar.Brand>
-                    <a href="/">React-Bootstrap</a>
+                    <a href="/">Data Structure Visualization</a>
                 </Navbar.Brand>
                 <Navbar.Toggle/>
             </Navbar.Header>
