@@ -1,55 +1,24 @@
-import React, { Component } from 'react';
-//import logo from './../../logo.svg';
+import React, {Component} from 'react';
 import './App.css';
-//import TreeNode from './../TreeNode/TreeNode';
-import BSTContainer from './../BinarySearchTree/BSTContainer';
+import NavigationBar from './../Navigation/NavigationBar';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
-class App extends Component
-{
-  render() {
-    let tree = {
-      val:5,
-      left:{
-        val:1,
-        left:{
-          val:-1,
-          left:null,
-          right:null
-        },
-        right:{
-          val:4,
-          left:null,
-          right:null
-        }
-      },
-      right:{
-        val:7,
-        left:{
-          val:6,
-          left:null,
-          right:null
-        },
-        right:{
-          val:10,
-          left:null,
-          right:{
-            val:11,
-            left:null,
-            right:null
-          }
-        }
-      }
-    };
+import BSTIndex from './../BinarySearchTree/BSTIndex';
 
-    let pointers = [{name: "current", pointer: tree.left}];
-    return (
-      <div className="App">
-        <div>
-          <BSTContainer bSTFrame={{tree, pointers}} width={1000} height={800} />
-        </div>
-      </div>
-    );
-  }
+class App extends Component {
+    render() {
+        return (<Router>
+            <div className="App">
+                <NavigationBar/>
+                <Switch>
+                    <Route exact="exact" path="/" component={Home}/>
+                    <Route path="/BinarySearchTree" component={BSTIndex}/>
+                </Switch>
+            </div>
+        </Router>);
+    }
 }
+
+const Home = () => (<div>Home</div>)
 
 export default App;
