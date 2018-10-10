@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 //import logo from './../../logo.svg';
 import './App.css';
 //import TreeNode from './../TreeNode/TreeNode';
-import KonvaContainer from './../KonvaContainer/KonvaContainer';
-import BinarySearchTree from './../BinarySearchTree/BinarySearchTree';
+import BSTContainer from './../BinarySearchTree/BSTContainer';
 
 class App extends Component
 {
@@ -46,9 +45,7 @@ class App extends Component
     return (
       <div className="App">
         <div>
-          <KonvaContainer width={1000} height={800}>
-            <BinarySearchTree pointers = {pointers} root={tree} width={1000} x={500} y={20} />
-          </KonvaContainer>
+          <BSTContainer bSTFrame={{tree, pointers}} width={1000} height={800} />
         </div>
       </div>
     );

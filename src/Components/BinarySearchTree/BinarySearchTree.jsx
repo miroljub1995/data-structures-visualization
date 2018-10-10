@@ -40,7 +40,7 @@ class BinarySearchTree extends Component{
 
   getArrow(points){
     return (
-      <Arrow points={points} stroke='black' fill='black' x={0} y={0} />
+      <Arrow points={points} stroke='black' fill='black' />
     )
   }
 
@@ -54,6 +54,9 @@ class BinarySearchTree extends Component{
     let levelDifferenceY = 60;
 
     const {x, y, root, width, pointers} = this.props;
+
+    if(root === null)
+      return null;
 
     let rootX = x;
     let rootY = y + treeNodeRadius;
@@ -77,7 +80,8 @@ class BinarySearchTree extends Component{
       arrowToRightSubTree = this.getArrowFromRootToChild(rootX, rootY, rightChildX, childRootY, treeNodeRadius);
 
     let pointersToRoot = this.getPointersToRoot(pointers);
-    pointersToRoot = pointersToRoot.map(pointer=>(<Pointer key={pointer.name} name={pointer.name} right={rootX - treeNodeRadius} top={rootY - treeNodeRadius/2} height={treeNodeRadius} />));
+    pointersToRoot = pointersToRoot.map(pointer=>(
+      <Pointer key={pointer.name} name={pointer.name} right={rootX - treeNodeRadius} top={rootY - treeNodeRadius/2} height={treeNodeRadius} />));
     //pointersToRoot = (<Group>{pointersToRoot}</Group>);
     //pointersToRoot = pointersToRoot[0];
     //debugger;

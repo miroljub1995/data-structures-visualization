@@ -10,7 +10,7 @@ export default class Pointer extends Component{
     let arrowPoints = [right-arrowWidth, middle, right, middle];
     return (
       <Group>
-        <Arrow points = {arrowPoints} stroke='red' fill='red' x={0} y={0} pointerLength={7} pointerWidth={7} />
+        <Arrow points = {arrowPoints} stroke='red' fill='red' x={0} y={0} pointerLength={7} pointerWidth={7} shadowBlur={5} />
         <Variable height={height} right={right - arrowWidth} top={top} name={name} />
       </Group>);
   }
