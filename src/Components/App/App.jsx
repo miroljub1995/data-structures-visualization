@@ -13,6 +13,7 @@ class App extends Component {
                 <Switch>
                     <Route exact="exact" path="/" component={Home}/>
                     <Route path="/BinarySearchTree" component={BSTIndex}/>
+                    <Route path="/" component={NotFound}/>
                 </Switch>
             </div>
         </Router>);
@@ -20,5 +21,6 @@ class App extends Component {
 }
 
 const Home = () => (<div>Home</div>)
+const NotFound = () => (<div>Not found</div>)
 
 export default App;

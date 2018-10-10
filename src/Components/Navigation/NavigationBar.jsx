@@ -1,50 +1,29 @@
 import React, {Component} from 'react';
-import {
-    Navbar,
-    NavbarBrand,
-    NavbarNav,
-    NavbarToggler,
-    Collapse,
-    NavItem,
-    NavLink,
-    Dropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem
-} from 'mdbreact';
+import {Navbar, NavItem, Nav} from 'react-bootstrap';
+import {IndexLinkContainer} from "react-router-bootstrap";
 
 export default class NavigationBar extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            collapse: false,
-            isWideEnough: false
-        };
-        this.onClick = this.onClick.bind(this);
-    }
-
-    onClick() {
-        this.setState({
-            collapse: !this.state.collapse
-        });
-    }
-
     render() {
-        return (<Navbar color="indigo" dark="dark" expand="md" scrolling="scrolling">
-            <NavbarBrand href="/">
-                <strong>Data Structure Visualization</strong>
-            </NavbarBrand>
-            {!this.state.isWideEnough && <NavbarToggler onClick={this.onClick}/>}
-            <Collapse isOpen={this.state.collapse} navbar="navbar">
-                <NavbarNav left="left">
-                    <NavItem>
-                        <NavLink to="/">Home</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink to="/BinarySearchTree">BST</NavLink>
-                    </NavItem>
-                </NavbarNav>
-            </Collapse>
+        return (<Navbar>
+            <Navbar.Header>
+                <Navbar.Brand>
+                    <a href="/">React-Bootstrap</a>
+                </Navbar.Brand>
+                <Navbar.Toggle/>
+            </Navbar.Header>
+            <Navbar.Collapse>
+                <Nav>
+                    <IndexLinkContainer to="/">
+                        <NavItem>Home</NavItem>
+                    </IndexLinkContainer>
+                    <IndexLinkContainer to="/BinarySearchTree">
+                        <NavItem>BST</NavItem>
+                    </IndexLinkContainer>
+                    <IndexLinkContainer to="/About">
+                        <NavItem>About</NavItem>
+                    </IndexLinkContainer>
+                </Nav>
+            </Navbar.Collapse>
         </Navbar>);
     }
 }
