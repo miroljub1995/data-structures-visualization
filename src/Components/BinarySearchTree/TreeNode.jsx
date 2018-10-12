@@ -11,7 +11,6 @@ class TreeNode extends Component
   height=this.props.radius * 2;
 
   render(){
-    debugger;
     return (
       <Group>
         <Circle

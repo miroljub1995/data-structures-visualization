@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import BSTContainer from './BSTContainer';
 import Operations from './Operations';
 import Player from './../Player/Player';
-import {Insert} from './Algorithms';
+import {Insert, Insert2} from './Algorithms';
+import {Pseudocode} from './../Pseudocode/Pseudocode';
 
 export default class BSTIndex extends Component {
   constructor(props) {
@@ -49,10 +50,9 @@ export default class BSTIndex extends Component {
   }
 
   handleInsert = (value) => {
-    let frames = Insert(this.state.root, value);
+    let frames = Insert2(this.state.root, value);
     let root = frames[frames.length - 1].root;
     this.setState({root, frames, currentFrame: null});
-    debugger;
   }
 
   handleNextFrame = (frame) => {
@@ -61,11 +61,12 @@ export default class BSTIndex extends Component {
 
   render() {
     const {root, frames, currentFrame} = this.state;
-debugger;
+
     return (<div>
       <Operations onInsert={this.handleInsert}/>
       {this.state.currentFrame && <BSTContainer bSTFrame={currentFrame} width={700} height={400}/>}
-      <Player width={700} frames={frames} onNextFrame={this.handleNextFrame}/>
+      {currentFrame && <Pseudocode style={{width: '430px', height: '400px', float: 'left'}} text={currentFrame.pseudocode} selectedLine={currentFrame.currentLine} />}
+      <Player width={1100} frames={frames} onNextFrame={this.handleNextFrame}/>
     </div>);
   }
 }

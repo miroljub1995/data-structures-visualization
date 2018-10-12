@@ -80,7 +80,8 @@ export default class Player extends Component {
     const {length: framesLength} = this.state.frames;
 
     return (<div style={{
-        width: `${this.props.width}px`
+        width: `${this.props.width}px`,
+        float: 'left'
       }}>
       <div style={{
           width: '180px'
