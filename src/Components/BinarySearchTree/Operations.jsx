@@ -18,7 +18,7 @@ export default class Operations extends Component {
 
     handleInsert = () => {
         const {onInsert} = this.props;
-        onInsert(this.state.insertValue);
+        onInsert(parseInt(this.state.insertValue));
     }
 
     handleInsertChange = (sender) => {

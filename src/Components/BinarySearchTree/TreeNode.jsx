@@ -11,6 +11,7 @@ class TreeNode extends Component
   height=this.props.radius * 2;
 
   render(){
+    debugger;
     return (
       <Group>
         <Circle
@@ -24,7 +25,7 @@ class TreeNode extends Component
         <Text
           x={this.props.x-this.width/2}
           y={this.props.y-this.height/2}
-          text={this.props.val}
+          text={`${this.props.val}`}
           align='center'
           verticalAlign='middle'
           width={this.width}

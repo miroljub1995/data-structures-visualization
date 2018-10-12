@@ -2,22 +2,25 @@ import React, {Component} from 'react';
 import './App.css';
 import NavigationBar from './../Navigation/NavigationBar';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {Grid} from 'react-bootstrap';
 
 import BSTIndex from './../BinarySearchTree/BSTIndex';
 
 class App extends Component {
-    render() {
-        return (<Router>
-            <div className="App">
-                <NavigationBar/>
-                <Switch>
-                    <Route exact path="/" component={Home}/>
-                    <Route path="/BinarySearchTree" component={BSTIndex}/>
-                    <Route path="/" component={NotFound}/>
-                </Switch>
-            </div>
-        </Router>);
-    }
+  render() {
+    return (<Router>
+      <div className="App">
+        <NavigationBar/>
+        <Grid>
+          <Switch>
+            <Route exact={true} path="/" component={Home}/>
+            <Route path="/BinarySearchTree" component={BSTIndex}/>
+            <Route path="/" component={NotFound}/>
+          </Switch>
+        </Grid>
+      </div>
+    </Router>);
+  }
 }
 
 const Home = () => (<div>Home</div>)

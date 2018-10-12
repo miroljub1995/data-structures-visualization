@@ -28,12 +28,12 @@ export default class BSTContainer extends Component{
   }
 
   render(){
-    const {tree, pointers} = this.props.bSTFrame;
+    const {root, pointers} = this.props.bSTFrame;
     const {width, height} = this.props;
-    const rootPointer = this.getRootPointer(tree === null);
+    const rootPointer = this.getRootPointer(root === null);
     return (
       <KonvaContainer width={width} height={height}>
-        <BinarySearchTree pointers = {pointers} root={tree} width={width} x={width/2} y={50} />
+        <BinarySearchTree pointers = {pointers} root={root} width={width} x={width/2} y={50} />
         {rootPointer}
       </KonvaContainer>);
   }
