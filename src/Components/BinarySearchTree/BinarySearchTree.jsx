@@ -80,7 +80,16 @@ class BinarySearchTree extends Component {
     let pointersToRoot = this.getPointersToRoot(pointers);
     let pointersToRootLength = pointersToRoot.length;
     let rotationAngle = -20;
-    pointersToRoot = pointersToRoot.map((pointer, i) => (<Pointer rotation={(pointersToRootLength - 1 - 2 * i) * rotationAngle} key={pointer.name} name={pointer.name} right={rootX - treeNodeRadius} top={rootY - treeNodeRadius / 2} height={treeNodeRadius}/>));
+    pointersToRoot = pointersToRoot.map((pointer, i) => {
+      return (<Pointer
+                rotation={(pointersToRootLength - 1 - 2 * i) * rotationAngle}
+                key={pointer.name}
+                name={pointer.name}
+                right={rootX - treeNodeRadius}
+                top={rootY - treeNodeRadius / 2}
+                height={treeNodeRadius}/>)
+      });
+
     return (<Group>
       <TreeNode val={rootVal} x={rootX} y={rootY} radius={treeNodeRadius}/>
       {arrowToRightSubTree}

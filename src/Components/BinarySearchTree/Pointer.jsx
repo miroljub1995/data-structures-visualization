@@ -19,7 +19,6 @@ export default class Pointer extends Component {
       right,
       middle
     ];
-    debugger;
     return (<Group offsetX={-right} offsetY={-middle}>
       <Group rotation={rotation} offsetX={right} offsetY={middle}>
         <Arrow points={arrowPoints} stroke='red' fill='red' x={0} y={0} pointerLength={7} pointerWidth={7} shadowBlur={5}/>

@@ -2,8 +2,13 @@ import React, {Component} from 'react';
 import KonvaContainer from './../KonvaContainer/KonvaContainer';
 import BinarySearchTree from './BinarySearchTree';
 import {Group, Rect, Text, Arrow} from 'react-konva';
+import Variable from './Variable';
 
 export default class BSTContainer extends Component{
+
+  getNullPointers(pointers = []) {
+    return pointers.filter(pointer => !pointer.pointer);
+  }
 
   getRootPointer(isNull){
     const {width} = this.props;
@@ -31,10 +36,22 @@ export default class BSTContainer extends Component{
     const {root, pointers} = this.props.bSTFrame;
     const {width, height} = this.props;
     const rootPointer = this.getRootPointer(root === null);
+    let nullPointers = this.getNullPointers(pointers);
+    nullPointers = nullPointers.map((pointer, i)=>{
+      return (<Variable
+                key={pointer.name}
+                name={pointer.name}
+                isNull={true}
+                right={width-10}
+                top={i*25 + 5}
+                height={20}/>);
+    })
+    debugger;
     return (
       <KonvaContainer width={width} height={height}>
         <BinarySearchTree pointers = {pointers} root={root} width={width} x={width/2} y={50} />
         {rootPointer}
+        {nullPointers}
       </KonvaContainer>);
   }
 }

@@ -12,7 +12,7 @@ const pushToFrames = (frames, root, pointers, pseudocode, currentLine) => {
   let newRoot = JSON.parse(JSON.stringify(root));
   frames.push({
     root: newRoot,
-    pointers: getPointersToTreeClone(root, newRoot, pointers),
+    pointers: getPointersToTreeClone(root, newRoot, pointers).concat(pointers.filter(p=>!p.pointer)),
     pseudocode,
     currentLine
   });
