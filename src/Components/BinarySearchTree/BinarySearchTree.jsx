@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import TreeNode from './TreeNode';
-import {Group, Arrow, Text} from 'react-konva'
-import Konva from 'konva';
+import {Group, Arrow} from 'react-konva'
 import Pointer from './Pointer';
 
 class BinarySearchTree extends Component {

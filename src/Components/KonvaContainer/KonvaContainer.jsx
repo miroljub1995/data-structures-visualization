@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Stage, Layer, Rect} from 'react-konva';
-import {Grid, Row, Col} from 'react-bootstrap';
 
 class KonvaContainer extends Component {
   render() {

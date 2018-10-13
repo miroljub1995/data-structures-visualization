@@ -50,7 +50,6 @@ export default class BSTContainer extends Component {
     nullPointers = nullPointers.map((pointer, i) => {
       return (<Variable key={pointer.name} name={pointer.name} isNull={true} right={width - 10} top={i * 25 + 5} height={20}/>);
     });
-    let pointersToHangingNodes = this.getPointersToHangingNodes(hangingNodes, pointers);
     let hangingNodesWithPointers = hangingNodes.map((node, i) => {
       let pointerToNode = pointers.find(p => p.pointer === node);
       let treeNodeRadius = 15;
@@ -64,7 +63,7 @@ export default class BSTContainer extends Component {
 
     //debugger;
     return (<KonvaContainer width={width} height={height}>
-      <BinarySearchTree pointers={pointers} root={root} width={width} x={width / 2} y={50}/>
+      <BinarySearchTree pointers={pointers} root={root} width={width-200} x={width / 2} y={50}/>
       {rootPointer}
       {nullPointers}
       {hangingNodesWithPointers}

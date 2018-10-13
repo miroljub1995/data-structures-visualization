@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Grid, Row, Col, Button} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 import Slider from '@material-ui/lab/Slider';
 
 export default class Player extends Component {

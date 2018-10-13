@@ -43,7 +43,7 @@ const setPointerValue = (pointers, name, newVal) => {
 const createPointer = (pointers, name, initVal) => {
   pointers.push({name, pointer: initVal});
 }
-
+/*
 export const Insert = (root, val) => {
 
   let frames = [];
@@ -114,7 +114,7 @@ export const Insert = (root, val) => {
     }
   }
   return frames;
-}
+}*/
 
 export const Insert2 = (root, val) => {
   root = JSON.parse(JSON.stringify(root));
@@ -139,7 +139,6 @@ export const Insert2 = (root, val) => {
     right: null
   };
 
-  let currentLine = 0;
   let frames = [];
   let pointers = [{name: 'newNode', pointer: newNode}];
   let hangingNodes = [newNode];
