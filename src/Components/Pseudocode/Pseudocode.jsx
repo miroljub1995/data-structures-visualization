@@ -5,6 +5,8 @@ export class Pseudocode extends Component {
   render() {
     const {text, selectedLine, style} = this.props;
     const lines = text.match(/[^\r\n]+/g);
+    if(!lines)
+      return null;
     const rows = lines.map((line, i) => {
       return (<div key={i} className={(
           i === (selectedLine - 1))

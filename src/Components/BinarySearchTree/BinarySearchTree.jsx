@@ -48,8 +48,8 @@ class BinarySearchTree extends Component {
   }
 
   render() {
-    let treeNodeRadius = 20;
-    let levelDifferenceY = 60;
+    let treeNodeRadius = 15;
+    let levelDifferenceY = 45;
 
     const {x, y, root, width, pointers} = this.props;
 

@@ -49,9 +49,14 @@ export default class BSTIndex extends Component {
 
   }
 
-  handleInsert = (value) => {
-    let frames = Insert2(this.state.root, value);
-    let root = frames[frames.length - 1].root;
+  handleInsert = (values) => {
+    debugger;
+    let frames = [];
+    let root = this.state.root;
+    values.forEach((value)=>{
+      frames = frames.concat(Insert2(root, value));
+      root = frames[frames.length - 1].root;
+    });
     this.setState({root, frames, currentFrame: null});
   }
 
@@ -66,7 +71,7 @@ export default class BSTIndex extends Component {
       <Operations onInsert={this.handleInsert}/>
       {this.state.currentFrame && <BSTContainer bSTFrame={currentFrame} width={700} height={400}/>}
       {currentFrame && <Pseudocode style={{width: '430px', height: '400px', float: 'left'}} text={currentFrame.pseudocode} selectedLine={currentFrame.currentLine} />}
-      <Player width={1100} frames={frames} onNextFrame={this.handleNextFrame}/>
+      {(frames.length > 0) && <Player width={1100} frames={frames} onNextFrame={this.handleNextFrame}/>}
     </div>);
   }
 }
