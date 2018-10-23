@@ -15,10 +15,12 @@ export default class Variable extends Component{
     this.setState({textWidthCalculated: true, width: width});
   }
   render() {
-    const {top, right, height, name, isNull} = this.props;
+    const {top, right, height, name, isNull, value} = this.props;
     let text;
     if(isNull)
       text = `${name}: null`;
+    else if(value !== undefined)
+      text = `${name} = ${value}`;
     else
       text = `${name}`;
     if(!this.state.textWidthCalculated)

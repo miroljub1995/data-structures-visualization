@@ -19,6 +19,9 @@ export default class NavigationBar extends Component {
                     <IndexLinkContainer to="/BinarySearchTree">
                         <NavItem>BST</NavItem>
                     </IndexLinkContainer>
+                    <IndexLinkContainer to="/MinHeap">
+                        <NavItem>MinHeap</NavItem>
+                    </IndexLinkContainer>
                     <IndexLinkContainer to="/About">
                         <NavItem>About</NavItem>
                     </IndexLinkContainer>

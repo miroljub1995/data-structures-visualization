@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import {Grid} from 'react-bootstrap';
 
 import BSTIndex from './../BinarySearchTree/BSTIndex';
+import MinHeapIndex from './../MinHeap/MinHeapIndex';
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
               <Grid><Home/></Grid>
             </div>)}/>
           <Route path="/BinarySearchTree" component={() => (<Grid><BSTIndex/></Grid>)}/>
+          <Route path="/MinHeap" component={() => (<Grid><MinHeapIndex/></Grid>)}/>
           <Route path="/" component={() => (<Grid><NotFound/></Grid>)}/>
         </Switch>
       </div>
