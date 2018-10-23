@@ -9,7 +9,6 @@ export class Pseudocode extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    debugger;
     if (this.selected) {
       const myDomNode = ReactDOM.findDOMNode(this.selected);
         myDomNode.scrollIntoView(false);
@@ -17,7 +16,6 @@ export class Pseudocode extends Component {
   }
 
   render() {
-    debugger;
     const {text, selectedLine, style} = this.props;
     const lines = text.match(/[^\r\n]+/g);
     if (!lines)

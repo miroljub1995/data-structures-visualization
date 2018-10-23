@@ -47,6 +47,7 @@
 
 .logo-link {
   margin:0px auto;
+  margin-bottom: 30px;
   width: 300px;
   height: 300px;
   display:block;
@@ -76,5 +77,15 @@
   background-size: 250px auto;
   background-repeat: no-repeat;
   background-image: url("./Images/Binary_search_tree.png");
+  /* background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/2000px-Binary_search_tree.svg.png"); */
+}
+
+#min_heap-logo {
+  margin:0px auto;
+  width: 250px;
+  height: 250px;
+  background-size: 250px auto;
+  background-repeat: no-repeat;
+  background-image: url("./Images/Min_heap.png");
   /* background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/2000px-Binary_search_tree.svg.png"); */
 }

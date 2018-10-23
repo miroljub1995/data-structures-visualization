@@ -42,8 +42,8 @@ export default class BinaryTreeContainer extends Component {
   }
 
   render() {
-    const {root, pointers, hangingNodes} = this.props.frame;
-    const {width, height} = this.props;
+    const {root, pointers = [], hangingNodes = []} = this.props.frame;
+    const {width, top = 0} = this.props;
     const rootPointer = this.getRootPointer(root === null);
     let nullPointers = this.getNullPointers(pointers);
     nullPointers = nullPointers.map((pointer, i) => {
@@ -61,7 +61,7 @@ export default class BinaryTreeContainer extends Component {
     });
 
     //debugger;
-    return (<Group width={width} height={height}>
+    return (<Group y={top}>
       <BinarySearchTree pointers={pointers} root={root} width={width-200} x={width / 2} y={50}/>
       {rootPointer}
       {nullPointers}

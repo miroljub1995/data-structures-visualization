@@ -30,6 +30,10 @@ const Home = () => (<div className='logo-container'>
     <h3>Binary Search Tree</h3>
     <div id='bst-logo'></div>
   </Link>
+  <Link className='logo-link' to='/MinHeap'>
+    <h3>Min Heap</h3>
+    <div id='min_heap-logo'></div>
+  </Link>
 </div>)
 const NotFound = () => (<div>Not found</div>)
 

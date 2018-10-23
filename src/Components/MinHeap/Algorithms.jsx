@@ -1,11 +1,15 @@
 const pushToFrames = (frames, heap, n, indexes, variables, pseudocode, currentLine) => {
+  heap = [...heap];
+  indexes = [...indexes];
+  variables = [...variables];
   frames.push({
-    heap: [...heap],
+    heap,
     n,
-    indexes: [...indexes],
-    variables: [...variables],
+    indexes,
+    variables,
     pseudocode,
-    currentLine
+    currentLine,
+    binaryTreeFrame: getBinaryTreeFrame(heap, n, indexes)
   });
 }
 
@@ -35,6 +39,35 @@ const setIndex = (indexes, name, index) => {
         index
       };
   });
+}
+
+const getBinaryTreeFrame = (heap, n, indexes) => {
+  if(n < 1)
+    return {root: null, pointers: []};
+  return getBinaryTreeFrameHelper(heap, 1, n, indexes);
+}
+
+const getBinaryTreeFrameHelper = (heap, i, n, indexes) => {
+  if(i > n)
+    return null;
+  const leftSubtreeFrame = getBinaryTreeFrameHelper(heap, 2 * i, n, indexes);
+  const rightSubtreeFrame = getBinaryTreeFrameHelper(heap, 2 * i + 1, n, indexes);
+  let root = {val: heap[i], left: null, right: null};
+  let frame = {root, pointers: []};
+  const indexesToThisNode = indexes.filter((e)=>e.index === i);
+  const pointersToThisNode = indexesToThisNode.map((e)=>{
+    return {name: e.name, pointer: root};
+  });
+  frame.pointers = pointersToThisNode;
+  if(leftSubtreeFrame){
+    root.left = leftSubtreeFrame.root;
+    frame.pointers = [...frame.pointers, ...leftSubtreeFrame.pointers];
+  }
+  if(rightSubtreeFrame){
+    root.right = rightSubtreeFrame.root;
+    frame.pointers = [...frame.pointers, ...rightSubtreeFrame.pointers];
+  }
+  return frame;
 }
 
 export const Insert = (heap, n, e) => {
