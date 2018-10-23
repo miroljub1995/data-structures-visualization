@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import Pointer from './../BinarySearchTree/Pointer';
+import Pointer from './../Variables/Pointer';
 import HorizontalElement from './HorizontalElement';
 import {Group, Rect} from 'react-konva';
 
 export default class HorizontalArray extends Component{
   render(){
-    const {top, left, array, n, indexes} = this.props;
+    const {top, left, array, indexes} = this.props;
     const elementH = 30, elementW = 30;
     const arrayWidth = array.length * elementW;
     const indexH = 20;

@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
-import KonvaContainer from './../KonvaContainer/KonvaContainer';
-import BinarySearchTree from './BinarySearchTree';
+import BinarySearchTree from './BinaryTree';
 import TreeNode from './TreeNode';
-import Pointer from './Pointer';
+import Pointer from './../Variables/Pointer';
 import {Group, Rect, Text, Arrow} from 'react-konva';
-import Variable from './Variable';
+import Variable from './../Variables/Variable';
 
-export default class BSTContainer extends Component {
+export default class BinaryTreeContainer extends Component {
 
   getNullPointers(pointers = []) {
     return pointers.filter(pointer => !pointer.pointer);
@@ -43,7 +42,7 @@ export default class BSTContainer extends Component {
   }
 
   render() {
-    const {root, pointers, hangingNodes} = this.props.bSTFrame;
+    const {root, pointers, hangingNodes} = this.props.frame;
     const {width, height} = this.props;
     const rootPointer = this.getRootPointer(root === null);
     let nullPointers = this.getNullPointers(pointers);
@@ -62,11 +61,11 @@ export default class BSTContainer extends Component {
     });
 
     //debugger;
-    return (<KonvaContainer width={width} height={height}>
+    return (<Group width={width} height={height}>
       <BinarySearchTree pointers={pointers} root={root} width={width-200} x={width / 2} y={50}/>
       {rootPointer}
       {nullPointers}
       {hangingNodesWithPointers}
-    </KonvaContainer>);
+    </Group>);
   }
 }

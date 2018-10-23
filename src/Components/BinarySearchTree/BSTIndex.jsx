@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import BSTContainer from './BSTContainer';
+import BinaryTreeContainer from './../BinaryTree/BinaryTreeContainer';
 import Operations from './Operations';
 import Player from './../Player/Player';
 import {Insert2} from './Algorithms';
 import {Pseudocode} from './../Pseudocode/Pseudocode';
+import KonvaContainer from './../KonvaContainer/KonvaContainer';
 
 export default class BSTIndex extends Component {
   constructor(props) {
@@ -34,9 +35,12 @@ export default class BSTIndex extends Component {
   render() {
     const {frames, currentFrame} = this.state;
 
+    const width = 700;
+    const height = 400;
+
     return (<div>
       <Operations onInsert={this.handleInsert}/>
-      {this.state.currentFrame && <BSTContainer bSTFrame={currentFrame} width={700} height={400}/>}
+      {this.state.currentFrame && <KonvaContainer width={width} height={height}><BinaryTreeContainer frame={currentFrame} width={width} height={height}/></KonvaContainer>}
       {currentFrame && <Pseudocode style={{width: '430px', height: '400px', float: 'left'}} text={currentFrame.pseudocode} selectedLine={currentFrame.currentLine} />}
       {(frames.length > 0) && <Player width={1100} frames={frames} onNextFrame={this.handleNextFrame}/>}
     </div>);

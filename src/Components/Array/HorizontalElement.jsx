@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Rect, Text, Group} from 'react-konva';
-import Pointer from './../BinarySearchTree/Pointer';
+import Pointer from './../Variables/Pointer';
 
 export default class HorizontalElement extends Component{
   render(){

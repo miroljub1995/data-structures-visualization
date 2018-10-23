@@ -1,19 +1,19 @@
 import React, {Component} from 'react';
 import TreeNode from './TreeNode';
 import {Group, Arrow} from 'react-konva'
-import Pointer from './Pointer';
+import Pointer from './../Variables/Pointer';
 
-class BinarySearchTree extends Component {
+export default class BinaryTree extends Component {
 
   getLeftSubTree(x, y, width) {
     if (this.props.root.left !== null)
-      return (<BinarySearchTree pointers={this.props.pointers} root={this.props.root.left} x={x} y={y} width={width}/>);
+      return (<BinaryTree pointers={this.props.pointers} root={this.props.root.left} x={x} y={y} width={width}/>);
     return null;
   }
 
   getRightSubTree(x, y, width) {
     if (this.props.root.right !== null)
-      return (<BinarySearchTree pointers={this.props.pointers} root={this.props.root.right} x={x} y={y} width={width}/>);
+      return (<BinaryTree pointers={this.props.pointers} root={this.props.root.right} x={x} y={y} width={width}/>);
     return null;
   }
 
@@ -99,5 +99,3 @@ class BinarySearchTree extends Component {
     </Group>);
   }
 }
-
-export default BinarySearchTree;
