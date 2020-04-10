@@ -22,9 +22,9 @@ export default class NavigationBar extends Component {
                     <IndexLinkContainer to="/MinHeap">
                         <NavItem>MinHeap</NavItem>
                     </IndexLinkContainer>
-                    <IndexLinkContainer to="/About">
+                    {/* <IndexLinkContainer to="/About">
                         <NavItem>About</NavItem>
-                    </IndexLinkContainer>
+                    </IndexLinkContainer> */}
                 </Nav>
             </Navbar.Collapse>
         </Navbar>);
