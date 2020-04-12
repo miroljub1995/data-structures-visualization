@@ -13,12 +13,12 @@ class App extends Component {
       <div className="App">
         <NavigationBar/>
         <Switch>
-          <Route exact={true} path="/" component={() => (<div id='app-image'>
+          <Route exact={true} path="/data-structures-visualization/" component={() => (<div id='app-image'>
               <Grid><Home/></Grid>
             </div>)}/>
-          <Route path="/BinarySearchTree" component={() => (<Grid><BSTIndex/></Grid>)}/>
-          <Route path="/MinHeap" component={() => (<Grid><MinHeapIndex/></Grid>)}/>
-          <Route path="/" component={() => (<Grid><NotFound/></Grid>)}/>
+          <Route path="/data-structures-visualization/BinarySearchTree" component={() => (<Grid><BSTIndex/></Grid>)}/>
+          <Route path="/data-structures-visualization/MinHeap" component={() => (<Grid><MinHeapIndex/></Grid>)}/>
+          <Route path="/data-structures-visualization/" component={() => (<Grid><NotFound/></Grid>)}/>
         </Switch>
       </div>
     </Router>);
@@ -26,11 +26,11 @@ class App extends Component {
 }
 
 const Home = () => (<div className='logo-container'>
-  <Link className='logo-link' to='/BinarySearchTree'>
+  <Link className='logo-link' to='/data-structures-visualization/BinarySearchTree'>
     <h3>Binary Search Tree</h3>
     <div id='bst-logo'></div>
   </Link>
-  <Link className='logo-link' to='/MinHeap'>
+  <Link className='logo-link' to='/data-structures-visualization/MinHeap'>
     <h3>Min Heap</h3>
     <div id='min_heap-logo'></div>
   </Link>

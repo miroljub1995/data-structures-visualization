@@ -84,7 +84,7 @@ export default class Player extends Component {
         float: 'left'
       }}>
       <div style={{
-          width: '180px'
+          width: '200px'
         }}>
         {
           !isPlaying && <Button style={{
@@ -105,7 +105,7 @@ export default class Player extends Component {
       </div>
       <div style={{
           width: '100%',
-          paddingLeft: '185px',
+          paddingLeft: '205px',
           paddingRight: '5px'
         }}>
         <Slider style={{

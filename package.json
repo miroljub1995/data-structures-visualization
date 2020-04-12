@@ -2,6 +2,7 @@
   "name": "data-structures-visualization",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://miroljub1995.github.io/data-structures-visualization",
   "dependencies": {
     "@material-ui/core": "^3.9.4",
     "@material-ui/lab": "^3.0.0-alpha.30",
@@ -27,5 +28,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
+  }
 }

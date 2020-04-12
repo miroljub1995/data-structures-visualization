@@ -58,7 +58,7 @@ export default class MinHeapIndex extends Component {
                                       <BinaryTreeContainer frame={currentFrame.binaryTreeFrame} width={width} top={150} />
                                   </KonvaContainer>}
       {currentFrame && <Pseudocode style={{width: '430px', height: '400px', float: 'left'}} text={currentFrame.pseudocode} selectedLine={currentFrame.currentLine} />}
-      {(frames.length > 0) && <Player width={1100} frames={frames} onNextFrame={this.handleNextFrame}/>}
+      {(frames.length > 0) && <Player width={1130} frames={frames} onNextFrame={this.handleNextFrame}/>}
     </div>);
   }
 }

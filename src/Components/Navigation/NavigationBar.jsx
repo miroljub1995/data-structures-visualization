@@ -7,19 +7,19 @@ export default class NavigationBar extends Component {
         return (<Navbar>
             <Navbar.Header>
                 <Navbar.Brand>
-                    <a href="/">Data Structure Visualization</a>
+                    <a href="/data-structures-visualization/">Data Structure Visualization</a>
                 </Navbar.Brand>
                 <Navbar.Toggle/>
             </Navbar.Header>
             <Navbar.Collapse>
                 <Nav>
-                    <IndexLinkContainer to="/">
+                    <IndexLinkContainer to="/data-structures-visualization/">
                         <NavItem>Home</NavItem>
                     </IndexLinkContainer>
-                    <IndexLinkContainer to="/BinarySearchTree">
+                    <IndexLinkContainer to="/data-structures-visualization/BinarySearchTree">
                         <NavItem>BST</NavItem>
                     </IndexLinkContainer>
-                    <IndexLinkContainer to="/MinHeap">
+                    <IndexLinkContainer to="/data-structures-visualization/MinHeap">
                         <NavItem>MinHeap</NavItem>
                     </IndexLinkContainer>
                     {/* <IndexLinkContainer to="/About">
