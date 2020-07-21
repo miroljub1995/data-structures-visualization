@@ -41,7 +41,7 @@ export default class BSTIndex extends Component {
     return (<div>
       <Operations onInsert={this.handleInsert}/>
       {this.state.currentFrame && <KonvaContainer width={width} height={height}><BinaryTreeContainer frame={currentFrame} width={width} height={height}/></KonvaContainer>}
-      {currentFrame && <Pseudocode style={{width: '430px', height: '400px', float: 'left'}} text={currentFrame.pseudocode} selectedLine={currentFrame.currentLine} />}
+      {currentFrame && <Pseudocode style={{width: '430px', height: `${height}px`, float: 'left'}} text={currentFrame.pseudocode} selectedLine={currentFrame.currentLine} />}
       {(frames.length > 0) && <Player width={1130} frames={frames} onNextFrame={this.handleNextFrame}/>}
     </div>);
   }
